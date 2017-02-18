@@ -20,31 +20,32 @@
 								</div>
 							</div> <!--table-header-->
 
-							<table class="task-table">
-								<tbody>
-								<tr>
-									<th><div class="plus"></div></th>
-									<th colspan="2">
-										<form action="" method="post">
-											<input type="text" name="add-task" placeholder="Start typing here to create a task..." />
-											<input class="button" type="submit" value="Add Task" />
-										</form>
-									</th>
-								</tr>
-								<tr>
-									<td class="col-1"><div class="foursquare"></div></td>
-									<td class="col-2"><p>Open this mock-up in Adobe Fireworks</p></td>
-									<td class="col-3">
-										<div class="table-icon">
-											<a href="" class="ti ti-split-v"></a>
-											<a href="" class="ti ti-pencil left-right-line"></a>
-											<a href="" class="ti ti-trash"></a>
-										</div>
-									</td>
-								</tr>
-
-							</tbody>
-							</table>
+								<table class="task-table">
+									<tbody>
+									<tr>
+										<th><div class="plus"></div></th>
+										<th colspan="2">
+											<form>
+												<input class="task-name", type="text" name="add-task" placeholder="Start typing here to create a task..." />
+												<input class="button js-add-task" type="submit" value="Add Task" />
+											</form>
+										</th>
+									</tr>
+									<% project.tasks.each do |task| %>
+										<tr>
+											<td class="col-1"><div class="foursquare"></div></td>
+											<td class="col-2"><p><%= task.content %></p></td>
+											<td class="col-3">
+												<div class="table-icon">
+													<a href="" class="ti ti-split-v"></a>
+													<a href="" class="ti ti-pencil left-right-line"></a>
+													<a href="" class="ti ti-trash"></a>
+												</div>
+											</td>
+										</tr>
+									<% end %>
+								</tbody>
+								</table>
 
 						</div> <!--main-table-->
 					</div>

@@ -59,3 +59,20 @@ $(document).ready ->
         $(e.target).parents(".project").find(".table-name").show()
       error: (xhr, status, statusErr) ->
         console.log xhr
+
+
+  $(document).on "click", ".js-add-task", (e) ->
+    e.preventDefault()
+    projectId = $(e.target).parents(".project").attr("projectid")
+    $.ajax
+      url: "projects/#{projectId}/tasks"
+      type: "POST"
+      data:
+        task:
+          content: $(e.target).parent().find(".task-name").val()
+      success: (response) ->
+        taskTemplate = JST['templates/task'](response)
+        $(e.target).parents(".project").find(".task-table tbody").append(taskTemplate)
+        $(e.target).parent().find(".task-name").val("")
+      error: (xhr, status, statusErr) ->
+        console.log xhr

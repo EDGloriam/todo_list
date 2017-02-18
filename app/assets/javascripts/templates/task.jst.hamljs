@@ -1,0 +1,10 @@
+%tr
+  %td.col-1
+    .foursquare
+  %td.col-2
+    %p=content
+  %td.col-3
+    .table-icon
+      %a.ti.ti-split-v{href: ""}
+      %a.ti.ti-pencil.left-right-line{href: ""}
+      %a.ti.ti-trash{href: ""}
