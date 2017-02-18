@@ -3,14 +3,19 @@
 		<div id="main-container">
 
 			<% @projects.each do |project| %>
-					<div class="project" projectid="<%=project.id%>">
+					<div projectid="<%=project.id%>" class="project" >
 						<div class="main-table">
 							<div class="table-header">
+								<form class="edit-project">
+									<input class="edit-project-name" type="text">
+									<button class="js-cancel-btn">Cancel</button>
+									<button class="js-update-btn">Update</button>
+								</form>
 								<div class="ti ti-calendar table-name">
-										<%=project.name%>
+									<%=project.name%>
 								</div>
 								<div class="right-icon">
-									<a href="#" class="ti ti-pencil right-line"></a>                      <!--пустая ссылка-->
+									<a href="#" class="ti ti-pencil right-line js-edit-project"></a>                      <!--пустая ссылка-->
 									<a href="#" class="ti ti-trash js-delete-project"></a>
 								</div>
 							</div> <!--table-header-->
@@ -54,7 +59,7 @@
 		<button id="create-project">Create</button>
 
 		<div class="button-add-list">
-			<div class="plus"></div>Add TODO List
+			<div class="plus"></div><span>Add TODO List</span>
 		</div>
 
 		<div id="test-container">

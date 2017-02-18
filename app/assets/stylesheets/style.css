@@ -239,9 +239,7 @@ h3 {
 	border-left: 1px solid #989898;
 	border-right: 1px solid #989898;
 }
-.task-table .table-icon a:hover {
-	background: black;                          /*убрать!!!*/
-}
+
 .task-table tr:hover .table-icon a {
 	display: inline-block;
 }
@@ -295,7 +293,7 @@ h3 {
 	top: 8px;
 	box-shadow: 0 2px 1px -1px #2A3B30 inset, 0px 2px 3px -1px #758FBF;
 }
-.button-add-list a {
+.button-add-list span {
 	display: block;
 	color: white;
 	text-shadow: 0px -1px 2px black;
@@ -321,6 +319,8 @@ h3 {
 
 /*VOVA*/
 
-#new-project-name, #create-project{
+#new-project-name,
+#create-project,
+	.edit-project{
 	display: none;
 }
