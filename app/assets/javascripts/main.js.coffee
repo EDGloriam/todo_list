@@ -12,16 +12,17 @@ $(document).ready ->
       success: (response) ->
         console.log response
         $("#new-project-name").val('')
-        $(".main-table").append(JST['templates/project'](response))
+
+        $("#main-container").append(JST['templates/project'](response))
       error: (xhr, status, statusErr) ->
         console.log xhr
 
-  $(".js-delete-project").click (e) ->
-    projectId = $(e.target).parents(".project").attr("project-id")
+  $(document).on "click", ".js-delete-project", (e) ->
+    projectId = $(e.target).parents(".project").attr("projectid")
     $.ajax
       url: "projects/#{projectId}"
       type: "DELETE"
       success: (response) ->
-        $("[project-id=#{projectId}]").remove()
+        $("[projectid=#{projectId}]").remove()
       error: (xhr, status, statusErr) ->
         console.log xhr

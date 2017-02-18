@@ -75,9 +75,7 @@ h3 {
 	color: #98B0D2;
 	font-size: 20px;
 }
-.table-header .right-icon a:hover {
-	background: black;                          /*убрать!!!*/
-}
+
 .table-header:hover .right-icon a {
 	display: inline;
 
