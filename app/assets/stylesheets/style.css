@@ -1,0 +1,322 @@
+﻿body {
+	font-family: Arial, sans-serif;
+	text-align: center;
+	background-image: url(bg.jpg);
+	background-size: 100%;
+}
+
+
+
+h1 {
+	text-transform: uppercase;
+	letter-spacing: -1.5px;
+	margin-top: 58px;
+}
+h3 {
+	text-transform: uppercase;
+	margin-top: -26px;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+
+.main-table {
+	width: 702px;
+	margin: 0 auto;
+	text-align: left;
+	margin-top: 54px;
+
+}
+
+/* начало - верхняя шапка таблицы*/
+
+
+.table-header {
+	width: 700px;
+	border: 1px solid #315589;
+	color: white;
+	text-shadow: 1px 1px 2px black;
+	cursor: pointer;
+	position: relative;
+
+	background: rgb(80,130,188); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(80,130,188,1) 0%, rgba(80,130,188,1) 26%, rgba(53,96,158,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(80,130,188,1) 0%,rgba(80,130,188,1) 26%,rgba(53,96,158,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(80,130,188,1) 0%,rgba(80,130,188,1) 26%,rgba(53,96,158,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5082bc', endColorstr='#35609e',GradientType=0 ); /* IE6-9 */
+}
+.table-header .table-name {
+	font-family: Arial, sans-serif;
+	color: white;
+	display: block;
+	border-top: 1px solid #8BB0D4;
+	padding: 10px 17px 16px;
+    font-size: 18px;
+    position: relative;
+}
+.table-header .ti::before {
+	font-family: 'themify';
+	color: #252D3A;
+	font-size: 23px;
+    margin-right: 10px;
+    vertical-align: bottom;
+    text-shadow: none;
+}
+.table-header .right-icon {
+    position: absolute;
+    right: 8px;
+    top: 16px;
+}
+.table-header .right-icon a {
+	text-decoration: none;
+	display: none;
+}
+.table-header .right-icon .ti::before {
+	color: #98B0D2;
+	font-size: 20px;
+}
+.table-header .right-icon a:hover {
+	background: black;                          /*убрать!!!*/
+}
+.table-header:hover .right-icon a {
+	display: inline;
+
+}
+.table-header .right-icon .right-line {
+	border-right: 1px solid #98B0D2;
+}
+
+/* конец - верхняя шапка таблицы*/
+
+/* начало - шапки таблицы*/
+
+.task-table {
+	border-spacing: 0px;
+	width: 702px;
+	border: 1px solid #B7B4AB;
+	border-top: none;
+	border-radius: 0 0px 20px 20px;
+	background: white;
+}
+.task-table th {
+	background: #D4D4D4;
+	text-align: left;
+	border-bottom: 1px solid #B7B4AB;
+}
+.task-table .col-1 {
+	width: 36px;
+	border-right: 6px double #F6EBED;
+}
+.task-table .col-2  {
+	width: 534px;
+	border-right: 1px solid #EAEEED;
+}
+.task-table .col-3 {
+	/*width: 200px;*/
+}
+.task-table .plus {
+	height: 23px;
+	width: 7px;
+	background: #579272;
+	position: relative;
+	margin: 12px 0 12px 22px;
+	box-shadow: 0 2px 1px -1px #2A3B30 inset;
+}
+.task-table .plus::before {
+	content: "\0020";
+	height: 7px;
+	width: 9px;
+	background: #579272;
+	position: absolute;
+	left: -9px;
+	top: 8px;
+	box-shadow: 0 2px 1px -1px #2A3B30 inset;
+}
+.task-table .plus::after {
+	content: "\0020";
+	height: 7px;
+	width: 9px;
+	background: #579272;
+	position: absolute;
+	right: -9px;
+	top: 8px;
+	box-shadow: 0 2px 1px -1px #2A3B30 inset;
+}
+
+.task-table input[type=text] {
+	border: none;
+	/*border-top: 1px solid black;*/
+	box-shadow: 0 2px 1px -1px #2A3B30 inset;
+	width: 517px;
+    height: 28px;
+    margin-left: 7px;
+    margin-top: -2px;
+    padding-left: 12px;
+}
+.task-table input:focus {
+	outline: none;
+}
+.task-table .button {
+	border: 1px solid #4C7F60;
+    height: 30px;
+    width: 108px;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    text-shadow: 1px 1px 2px black;
+    margin: -2px 0 0 -4px;
+	padding-left: 2px;
+	background: rgb(146,201,172); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(146,201,172,1) 1%, rgba(80,135,103,1) 85%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(146,201,172,1) 1%,rgba(80,135,103,1) 85%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(146,201,172,1) 1%,rgba(80,135,103,1) 85%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#92c9ac', endColorstr='#508767',GradientType=0 ); /* IE6-9 */
+
+}
+
+/* конец - шапки таблицы*/
+
+/* начало - таблицы*/
+
+
+.task-table td {
+	border-bottom: 1px solid #EAEEED;
+	color: #9D9D9D;
+	font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.9px;
+
+
+
+}
+.task-table tr:last-child td {
+	border-bottom: none;
+}
+.task-table tr:last-child td:first-child {
+	border-radius: 0 0px 0px 20px;
+
+}
+.task-table tr:last-child td:last-child {
+	border-radius: 0 0px 20px 0px;
+
+}
+.task-table .foursquare {
+	height: 12px;
+    width: 12px;
+    margin-left: 14px;
+    border: 1px solid #878787;
+    border-radius: 3px;
+    box-shadow: 0 1.5px 1px -1px #5E5F5E;
+
+
+	background: rgb(243,243,243); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(243,243,243,1) 18%, rgba(228,228,228,1) 53%, rgba(228,228,228,1) 65%, rgba(243,243,243,1) 77%, rgba(253,253,253,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(243,243,243,1) 18%,rgba(228,228,228,1) 53%,rgba(228,228,228,1) 65%,rgba(243,243,243,1) 77%,rgba(253,253,253,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(243,243,243,1) 18%,rgba(228,228,228,1) 53%,rgba(228,228,228,1) 65%,rgba(243,243,243,1) 77%,rgba(253,253,253,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3f3', endColorstr='#fdfdfd',GradientType=0 ); /* IE6-9 */
+}
+
+.task-table tr:hover {
+	cursor: pointer;
+	background: #FCFED5;
+
+
+}
+
+.task-table .col-2 p  {
+	margin-left: 17px;
+    margin-bottom: 16px;
+}
+
+.task-table .table-icon  {
+	margin: 0 7px;
+}
+
+.task-table .table-icon a {
+	text-decoration: none;
+	color: #989898;
+	display: none;
+	padding: 0px 8px;
+}
+.task-table .left-right-line {
+	border-left: 1px solid #989898;
+	border-right: 1px solid #989898;
+}
+.task-table .table-icon a:hover {
+	background: black;                          /*убрать!!!*/
+}
+.task-table tr:hover .table-icon a {
+	display: inline-block;
+}
+
+
+/* конец - таблицы*/
+
+
+/* начало - кнопки снизу*/
+
+.button-add-list {
+	margin: 47px auto 0;
+	width: 209px;
+	border: 1px solid #315589;
+	cursor: pointer;
+	position: relative;
+	border-radius: 3px;
+
+	background: rgb(82,129,190); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(82,129,190,1) 25%, rgba(56,91,152,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(82,129,190,1) 25%,rgba(56,91,152,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(82,129,190,1) 25%,rgba(56,91,152,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5281be', endColorstr='#385b98',GradientType=0 ); /* IE6-9 */
+
+}
+.button-add-list .plus {
+	height: 23px;
+	width: 7px;
+	background: #30486D;
+	position: absolute;
+	margin: 11px 0 11px 18px;
+	box-shadow: 0 2px 1px -1px #2A3B30 inset, 0px 2px 3px -1px #758FBF;
+}
+.button-add-list .plus::before {
+	content: "\0020";
+	height: 7px;
+	width: 9px;
+	background: #30486D;
+	position: absolute;
+	left: -9px;
+	top: 8px;
+	box-shadow: 0 2px 1px -1px #2A3B30 inset, 0px 2px 3px -1px #758FBF;
+}
+.button-add-list .plus::after {
+	content: "\0020";
+	height: 7px;
+	width: 9px;
+	background: #30486D;
+	position: absolute;
+	right: -9px;
+	top: 8px;
+	box-shadow: 0 2px 1px -1px #2A3B30 inset, 0px 2px 3px -1px #758FBF;
+}
+.button-add-list a {
+	display: block;
+	color: white;
+	text-shadow: 0px -1px 2px black;
+	text-decoration: none;
+	font-weight: 600;
+	border-top: 1px solid #8BB0D4;
+	padding: 13px 0 13px 13px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+
+}
+
+
+/* конец - кнопки снизу*/
+
+/* копирайт*/
+
+.copy {
+	color: white;
+	margin-top: 42px;
+    font-size: 14px;
+}
