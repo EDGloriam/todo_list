@@ -1,0 +1,26 @@
+.table-header
+  .ti.ti-calendar.table-name=name
+  .right-icon
+    %a.ti.ti-pencil.right-line{:href => ""}
+    / пустая ссылка
+    %a.ti.ti-trash{:href => ""}
+/ table-header
+%table.task-table
+  %tbody
+    %tr
+      %th
+        .plus
+      %th{:colspan => "2"}
+        %form{:action => "", :method => "post"}
+          %input{:name => "add-task", :placeholder => "Start typing here to create a task...", :type => "text"}/
+          %input.button{:type => "submit", :value => "Add Task"}/
+    %tr
+      %td.col-1
+        .foursquare
+      %td.col-2
+        %p Open this mock-up in Adobe Fireworks
+      %td.col-3
+        .table-icon
+          %a.ti.ti-split-v{:href => ""}
+          %a.ti.ti-pencil.left-right-line{:href => ""}
+          %a.ti.ti-trash{:href => ""}

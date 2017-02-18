@@ -320,3 +320,9 @@ h3 {
 	margin-top: 42px;
     font-size: 14px;
 }
+
+/*VOVA*/
+
+#new-project-name, #create-project{
+	display: none;
+}

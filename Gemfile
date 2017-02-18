@@ -35,7 +35,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem "jquery-tmpl-rails"
+gem 'ruby-haml-js'
+gem "sprockets-rails", '= 2.3.3'
 
 gem 'pg'
 gem 'devise'

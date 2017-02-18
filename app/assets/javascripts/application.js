@@ -12,6 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-tmpl
-//= require qwe
+//= require_tree ./templates
 //= require_tree .

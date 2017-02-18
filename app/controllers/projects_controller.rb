@@ -1,11 +1,13 @@
 class ProjectsController < ApplicationController
+	respond_to :html, :json
+
 	def index
 		@projects = current_user.projects
-		render 'index'
+		respond_with @projects
 	end
 
 	def create
-		@project = current_user.create(permitted_params)
+		@project = current_user.projects.create(permitted_params)
 		render json: @project
 	end
 
