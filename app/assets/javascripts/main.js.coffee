@@ -12,7 +12,7 @@ $(document).ready ->
       success: (response) ->
         console.log response
         $("#new-project-name").val('')
-
+        $("#new-project-name, #create-project").hide()
         $("#main-container").append(JST['templates/project'](response))
       error: (xhr, status, statusErr) ->
         console.log xhr
@@ -47,7 +47,6 @@ $(document).ready ->
     e.preventDefault()
     projectId = $(e.target).parents(".project").attr("projectid")
     perentElement = $(e.target).parent()
-    # debugger
     $.ajax
       url: "projects/#{projectId}"
       type: "PATCH"
@@ -55,10 +54,8 @@ $(document).ready ->
         project:
           name: $(e.target).parent().find(".edit-project-name").val()
       success: (response) ->
-          perentElement.find(".table-name").val(response.name)
-          perentElement.hide()
-          console.log("hide is done")
-          perentElement.perent().find(".table-name").show()
-          console.log("show is done")
+        $(e.target).parents(".project").find(".edit-project").hide()
+        $(e.target).parents(".project").find(".table-name").text(response.name)
+        $(e.target).parents(".project").find(".table-name").show()
       error: (xhr, status, statusErr) ->
         console.log xhr

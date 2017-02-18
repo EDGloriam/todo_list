@@ -1,17 +1,17 @@
 .project{ projectid: "#{id}" }
   .main-table
     .table-header
-    %form.edit-project
-      %input.edit-project-name{type: "text"}
-      %button.js-cancel-btn Cancel
-      %button.js-update-btn Update
+      %form.edit-project
+        %input.edit-project-name{type: "text"}
+        %button.js-cancel-btn Cancel
+        %button.js-update-btn Update
       -# %form{class: "edit-project", action: "", method: "post"}
       -# %input{class: "edit-project-name", type: "text"}
       -# %button{class: "js-cancel-btn", value:"Cancel"}
       -# %button{class: "js-update-btn", value:"Update"}
       .ti.ti-calendar.table-name=name
       .right-icon
-        %a.ti.ti-pencil.right-line{href: ""}
+        %a.ti.ti-pencil.right-line.js-edit-project{href: ""}
         / пустая ссылка
         %a.ti.ti-trash.js-delete-project{href: ""}
     / table-header
