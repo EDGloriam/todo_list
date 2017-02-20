@@ -72,7 +72,6 @@ $(document).ready ->
 # Add Task
 #-----------------------------------------------------------------------
   $(document).on "click", ".js-add-task", (e) ->
-
     e.preventDefault()
     projectId = $(e.target).parents(".project").attr("projectid")
     $.ajax
@@ -81,9 +80,10 @@ $(document).ready ->
       data:
         task:
           content: $(e.target).parent().find(".task-name").val()
+          status: ""
       success: (response) ->
         taskTemplate = JST['templates/task'](response)
-        $(e.target).parents(".project").find(".task-table #tasks").append(taskTemplate)
+        $(e.target).parents(".project").find(".task-table .tasks").append(taskTemplate)
         $(e.target).parent().find(".task-name").val("")
       error: (xhr, status, statusErr) ->
         console.log xhr
@@ -111,6 +111,7 @@ $(document).ready ->
       data:
         task:
           content: $(e.target).parent().find(".edit-task-content").val().trim()
+        status: ""
       success: (response) ->
         $(e.target).parents("tr").find(".edit-task-form").hide()
         $(e.target).parents("tr").find(".col-2 p").text(response.content)
@@ -131,7 +132,32 @@ $(document).ready ->
         $("[id=#{id}]").remove()
       error: (xhr, status, statusErr) ->
         console.log xhr
-
-
-
-
+#-----------------------------------------------------------------------
+# Marck Task as 'Done'
+#-----------------------------------------------------------------------
+  $(document).on "change", ".js-task-status", (e) ->
+    # e.preventDefault()
+    projectid = $(e.target).parents(".project").attr("projectid")
+    id = $(e.target).parents("tr").attr("id")
+    if e.currentTarget.checked
+      $.ajax
+          url: "projects/#{projectid}/tasks/#{id}"
+          type: "PATCH"
+          data:
+            task:
+              status: "done"
+          success: (response) ->
+            $(e.currentTarget).parents("tr").find(".col-2 p").toggleClass("checked-task")
+          error: (xhr, status, statusErr) ->
+            console.log xhr
+    else
+      $.ajax
+          url: "projects/#{projectid}/tasks/#{id}"
+          type: "PATCH"
+          data:
+            task:
+              status: ""
+          success: (response) ->
+            $(e.currentTarget).parents("tr").find(".col-2 p").toggleClass("checked-task")
+          error: (xhr, status, statusErr) ->
+            console.log xhr

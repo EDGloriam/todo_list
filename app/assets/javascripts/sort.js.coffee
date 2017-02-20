@@ -1,2 +1,2 @@
-$(document).ready ->
-	$('#tasks').sortable();
+# $(document).ready ->
+# 	$('.tasks').sortable()

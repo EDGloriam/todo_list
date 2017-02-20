@@ -1,8 +1,8 @@
 %tr{ id: "#{id}" }
   %td.col-1
-    .foursquare
+    %input.task-status{type: "checkbox",proper_checkbox_attr("#{status}")}
   %td.col-2
-    %p
+    %p{class: proper_class("#{status}")}
       =content
     %form.edit-task-form
       %input.edit-task-content{type: "text"}

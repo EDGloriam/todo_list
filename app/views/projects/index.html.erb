@@ -39,10 +39,10 @@
 									<% project.tasks.each do |task| %>
 										<tr id="<%= task.id %>">
 											<td class="col-1">
-												<div class="foursquare"></div>
+												<input type="checkbox" class="js-task-status" <%= proper_checkbox_attr(task.status) %>/>
 											</td>
 											<td class="col-2">
-												<p><%= task.content %></p>
+												<p class="<%=proper_class(task.status)%>"><%= task.content %></p>
 												<form class="edit-task-form">
 													<input class="edit-task-content" type="text">
 													<button class="js-cancel-task-btn">Cancel</button>

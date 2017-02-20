@@ -19,7 +19,7 @@
             %form
               %input.task-name{name: "add-task", placeholder: "Start typing here to create a task...", type: "text"}
               %input.button.js-add-task{type: "submit", value: "Add Task"}
-      %tbody.ui-sortable{ id: "tasks"}
+      %tbody.tasks
 
 
 
