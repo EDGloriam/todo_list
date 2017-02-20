@@ -15,8 +15,8 @@
 									<%=project.name%>
 								</div>
 								<div class="right-icon">
-									<a href="#" class="ti ti-pencil right-line js-edit-project"></a>                      <!--пустая ссылка-->
-									<a href="#" class="ti ti-trash js-delete-project"></a>
+									<span class="ti ti-pencil right-line js-edit-project"></span>                      <!--пустая ссылка-->
+									<span class="ti ti-trash js-delete-project"></span>
 								</div>
 							</div> <!--table-header-->
 
@@ -32,14 +32,21 @@
 										</th>
 									</tr>
 									<% project.tasks.each do |task| %>
-										<tr>
+										<tr taskid="<%= task.id %>">
 											<td class="col-1"><div class="foursquare"></div></td>
-											<td class="col-2"><p><%= task.content %></p></td>
+											<td class="col-2">
+												<p><%= task.content %></p>
+												<form class="edit-task-form">
+													<input class="edit-task-content" type="text">
+													<button class="js-cancel-task-btn">Cancel</button>
+													<button class="js-update-task-btn">Update</button>
+												</form>
+											</td>
 											<td class="col-3">
 												<div class="table-icon">
-													<a href="" class="ti ti-split-v"></a>
-													<a href="" class="ti ti-pencil left-right-line"></a>
-													<a href="" class="ti ti-trash"></a>
+													<span class="ti ti-split-v"></span>
+													<span class="ti ti-pencil left-right-line js-edit-task"></span>
+													<span class="ti ti-trash js-delete-task"></span>
 												</div>
 											</td>
 										</tr>

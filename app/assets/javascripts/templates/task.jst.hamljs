@@ -1,10 +1,14 @@
-%tr
+%tr{ task: "#{id}" }
   %td.col-1
     .foursquare
   %td.col-2
     %p=content
+    %form.edit-task-form
+		  %input.edit-task-content{:type => "text"}
+		  %button.js-cancel-task-btn Cancel
+		  %button.js-update-task-btn Update
   %td.col-3
     .table-icon
-      %a.ti.ti-split-v{href: ""}
-      %a.ti.ti-pencil.left-right-line{href: ""}
-      %a.ti.ti-trash{href: ""}
+      %span.ti.ti-split-v{href: ""}
+      %span.ti.ti-pencil.left-right-line.js-edit-task{href: ""}
+      %span.ti.ti-trash.js-delete-task{href: ""}

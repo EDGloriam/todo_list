@@ -65,9 +65,9 @@ h3 {
 .table-header .right-icon {
     position: absolute;
     right: 8px;
-    top: 16px;
+    top: 13px;
 }
-.table-header .right-icon a {
+.table-header .right-icon span {
 	text-decoration: none;
 	display: none;
 }
@@ -76,7 +76,8 @@ h3 {
 	font-size: 20px;
 }
 
-.table-header:hover .right-icon a {
+.table-header:hover .right-icon span {
+	line-height: 2em;
 	display: inline;
 
 }
@@ -141,9 +142,8 @@ h3 {
 	box-shadow: 0 2px 1px -1px #2A3B30 inset;
 }
 
-.task-table input[type=text] {
+.task-table .task-name {
 	border: none;
-	/*border-top: 1px solid black;*/
 	box-shadow: 0 2px 1px -1px #2A3B30 inset;
 	width: 517px;
     height: 28px;
@@ -151,6 +151,14 @@ h3 {
     margin-top: -2px;
     padding-left: 12px;
 }
+
+.task-table .edit-task-content{
+	height: 28px;
+	width: 70%;
+  border: 1px solid #989898;
+  margin: 5px;
+}
+
 .task-table input:focus {
 	outline: none;
 }
@@ -229,8 +237,7 @@ h3 {
 	margin: 0 7px;
 }
 
-.task-table .table-icon a {
-	text-decoration: none;
+.task-table .table-icon span {
 	color: #989898;
 	display: none;
 	padding: 0px 8px;
@@ -240,7 +247,7 @@ h3 {
 	border-right: 1px solid #989898;
 }
 
-.task-table tr:hover .table-icon a {
+.task-table tr:hover .table-icon span {
 	display: inline-block;
 }
 
@@ -317,10 +324,11 @@ h3 {
     font-size: 14px;
 }
 
-/*VOVA*/
+/*----------styles for correct view-----------------*/
 
 #new-project-name,
 #create-project,
-	.edit-project{
+	.edit-project,
+	.edit-task-form{
 	display: none;
 }

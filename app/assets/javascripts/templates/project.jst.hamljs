@@ -13,7 +13,7 @@
     / table-header
     %table.task-table
       %tbody
-        %tr
+        %tr{ taskid: "#{id}" }
           %th
             .plus
           %th{ colspan: "2"}

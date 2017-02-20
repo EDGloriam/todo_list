@@ -1,3 +1,6 @@
+#-----------------------------------------------------------------------
+# Add Project
+#-----------------------------------------------------------------------
 $(document).ready ->
   $(".button-add-list").click ->
     $("#new-project-name, #create-project").show()
@@ -16,24 +19,16 @@ $(document).ready ->
         $("#main-container").append(JST['templates/project'](response))
       error: (xhr, status, statusErr) ->
         console.log xhr
-
-  $(document).on "click", ".js-delete-project", (e) ->
-    projectId = $(e.target).parents(".project").attr("projectid")
-    $.ajax
-      url: "projects/#{projectId}"
-      type: "DELETE"
-      success: (response) ->
-        $("[projectid=#{projectId}]").remove()
-      error: (xhr, status, statusErr) ->
-        console.log xhr
-
+#-----------------------------------------------------------------------
+# Edit Project
+#-----------------------------------------------------------------------
   $(document).on "click", ".js-edit-project", (e) ->
     e.preventDefault()
     project = $(e.target).parents(".project")
-    valueOfProj = project.find(".table-name").text().trim()
+    nameOfProject = project.find(".table-name").text().trim()
     project.find(".table-name").hide()
     project.find(".edit-project").show()
-    project.find(".edit-project-name").val(valueOfProj)
+    project.find(".edit-project-name").val(nameOfProject)
 
 
   $(document).on "click", ".js-cancel-btn", (e) ->
@@ -59,8 +54,23 @@ $(document).ready ->
         $(e.target).parents(".project").find(".table-name").show()
       error: (xhr, status, statusErr) ->
         console.log xhr
-
-
+#-----------------------------------------------------------------------
+# DELETE Project
+#-----------------------------------------------------------------------
+  $(document).on "click", ".js-delete-project", (e) ->
+    # console.log("!")
+    # debugger
+    projectid = $(e.target).parents(".project").attr("projectid")
+    $.ajax
+      url: "projects/#{projectid}"
+      type: "DELETE"
+      success: (response) ->
+        $("[projectid=#{projectid}]").remove()
+      error: (xhr, status, statusErr) ->
+        console.log xhr
+#-----------------------------------------------------------------------
+# Add Task
+#-----------------------------------------------------------------------
   $(document).on "click", ".js-add-task", (e) ->
     e.preventDefault()
     projectId = $(e.target).parents(".project").attr("projectid")
@@ -74,5 +84,49 @@ $(document).ready ->
         taskTemplate = JST['templates/task'](response)
         $(e.target).parents(".project").find(".task-table tbody").append(taskTemplate)
         $(e.target).parent().find(".task-name").val("")
+      error: (xhr, status, statusErr) ->
+        console.log xhr
+#-----------------------------------------------------------------------
+# Edit Task
+#-----------------------------------------------------------------------
+  $(document).on "click", ".js-edit-task", (e) ->
+    contentWithinEdit = $(e.target).parents("tr").find(".col-2 p").text().trim()
+    $(e.target).parents("tr").find(".edit-task-content").val(contentWithinEdit)
+    $(e.target).parents("tr").find(".edit-task-form").show()
+    $(e.target).parents("tr").find(".col-2 p").hide()
+
+  $(document).on "click", ".js-cancel-task-btn", (e) ->
+    e.preventDefault()
+    $(e.target).parents("tr").find(".edit-task-form").hide()
+    $(e.target).parents("tr").find(".col-2 p").show()
+
+  $(document).on "click", ".js-update-task-btn", (e) ->
+    e.preventDefault()
+    projectId = $(e.target).parents(".project").attr("projectid")
+    taskid = $(e.target).parents("tr").attr("taskid")
+    $.ajax
+      url: "projects/#{projectId}/tasks/#{taskid}"
+      type: "PATCH"
+      data:
+        task:
+          content: $(e.target).parent().find(".edit-task-content").val().trim()
+      success: (response) ->
+        $(e.target).parents("tr").find(".edit-task-form").hide()
+        $(e.target).parents("tr").find(".col-2 p").text(response.content)
+        $(e.target).parents("tr").find(".col-2 p").show()
+      error: (xhr, status, statusErr) ->
+        console.log xhr
+
+#-----------------------------------------------------------------------
+# DELETE Task
+#-----------------------------------------------------------------------
+  $(document).on "click", ".js-delete-task", (e) ->
+    projectid = $(e.target).parents(".project").attr("projectid")
+    taskid = $(e.target).parents("tr").attr("taskid")
+    $.ajax
+      url: "projects/#{projectid}/tasks/#{taskid}"
+      type: "DELETE"
+      success: (response) ->
+        $("[taskid=#{taskid}]").remove()
       error: (xhr, status, statusErr) ->
         console.log xhr
