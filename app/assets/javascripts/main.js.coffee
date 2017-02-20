@@ -13,7 +13,7 @@ $(document).ready ->
         project:
           name: $("#new-project-name").val()
       success: (response) ->
-        console.log response
+        # console.log response
         $("#new-project-name").val('')
         $("#new-project-name, #create-project").hide()
         $("#main-container").append(JST['templates/project'](response))
@@ -72,6 +72,7 @@ $(document).ready ->
 # Add Task
 #-----------------------------------------------------------------------
   $(document).on "click", ".js-add-task", (e) ->
+
     e.preventDefault()
     projectId = $(e.target).parents(".project").attr("projectid")
     $.ajax
@@ -82,7 +83,7 @@ $(document).ready ->
           content: $(e.target).parent().find(".task-name").val()
       success: (response) ->
         taskTemplate = JST['templates/task'](response)
-        $(e.target).parents(".project").find(".task-table tbody").append(taskTemplate)
+        $(e.target).parents(".project").find(".task-table #tasks").append(taskTemplate)
         $(e.target).parent().find(".task-name").val("")
       error: (xhr, status, statusErr) ->
         console.log xhr
@@ -103,9 +104,9 @@ $(document).ready ->
   $(document).on "click", ".js-update-task-btn", (e) ->
     e.preventDefault()
     projectId = $(e.target).parents(".project").attr("projectid")
-    taskid = $(e.target).parents("tr").attr("taskid")
+    id = $(e.target).parents("tr").attr("id")
     $.ajax
-      url: "projects/#{projectId}/tasks/#{taskid}"
+      url: "projects/#{projectId}/tasks/#{id}"
       type: "PATCH"
       data:
         task:
@@ -122,11 +123,15 @@ $(document).ready ->
 #-----------------------------------------------------------------------
   $(document).on "click", ".js-delete-task", (e) ->
     projectid = $(e.target).parents(".project").attr("projectid")
-    taskid = $(e.target).parents("tr").attr("taskid")
+    id = $(e.target).parents("tr").attr("id")
     $.ajax
-      url: "projects/#{projectid}/tasks/#{taskid}"
+      url: "projects/#{projectid}/tasks/#{id}"
       type: "DELETE"
       success: (response) ->
-        $("[taskid=#{taskid}]").remove()
+        $("[id=#{id}]").remove()
       error: (xhr, status, statusErr) ->
         console.log xhr
+
+
+
+

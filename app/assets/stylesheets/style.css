@@ -224,15 +224,15 @@ h3 {
 .task-table tr:hover {
 	cursor: pointer;
 	background: #FCFED5;
-
-
 }
 
 .task-table .col-2 p  {
 	margin-left: 17px;
     margin-bottom: 16px;
 }
-
+.ti-split-v{
+cursor: move;
+}
 .task-table .table-icon  {
 	margin: 0 7px;
 }

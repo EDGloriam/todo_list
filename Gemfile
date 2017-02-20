@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'ruby-haml-js'
 gem "sprockets-rails", '= 2.3.3'
-
+gem 'jquery-ui-rails'
 gem 'pg'
 gem 'devise'
 

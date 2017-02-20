@@ -2,22 +2,24 @@
   .main-table
     .table-header
       %form.edit-project
-        %input.edit-project-name{type: "text"}
+        %input.edit-project-name{ type: "text"}
         %button.js-cancel-btn Cancel
         %button.js-update-btn Update
       .ti.ti-calendar.table-name=name
       .right-icon
-        %a.ti.ti-pencil.right-line.js-edit-project{href: ""}
-        / пустая ссылка
-        %a.ti.ti-trash.js-delete-project{href: ""}
+        %span.ti.ti-pencil.right-line.js-edit-project
+        %span.ti.ti-trash.js-delete-project
     / table-header
     %table.task-table
       %tbody
-        %tr{ taskid: "#{id}" }
+        %tr
           %th
             .plus
           %th{ colspan: "2"}
-            %form{action: "", method: "post"}
+            %form
               %input.task-name{name: "add-task", placeholder: "Start typing here to create a task...", type: "text"}
               %input.button.js-add-task{type: "submit", value: "Add Task"}
+      %tbody.ui-sortable{ id: "tasks"}
+
+
 

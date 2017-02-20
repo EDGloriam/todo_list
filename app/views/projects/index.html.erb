@@ -12,28 +12,35 @@
 									<button class="js-update-btn">Update</button>
 								</form>
 								<div class="ti ti-calendar table-name">
-									<%=project.name%>
+									<%= project.name %>
 								</div>
 								<div class="right-icon">
-									<span class="ti ti-pencil right-line js-edit-project"></span>                      <!--пустая ссылка-->
+									<span class="ti ti-pencil right-line js-edit-project"></span>
 									<span class="ti ti-trash js-delete-project"></span>
 								</div>
 							</div> <!--table-header-->
 
 								<table class="task-table">
 									<tbody>
-									<tr>
-										<th><div class="plus"></div></th>
-										<th colspan="2">
-											<form>
-												<input class="task-name", type="text" name="add-task" placeholder="Start typing here to create a task..." />
-												<input class="button js-add-task" type="submit" value="Add Task" />
-											</form>
-										</th>
-									</tr>
+										<tr>
+												<th>
+													<div class="plus"></div>
+												</th>
+												<th colspan="2">
+													<form>
+														<input class="task-name", type="text" name="add-task" placeholder="Start typing here to create a task..." />
+														<input class="button js-add-task" type="submit" value="Add Task" />
+													</form>
+												</th>
+											</tr>
+									</tbody>
+									<tbody id="tasks">
+
 									<% project.tasks.each do |task| %>
-										<tr taskid="<%= task.id %>">
-											<td class="col-1"><div class="foursquare"></div></td>
+										<tr id="<%= task.id %>">
+											<td class="col-1">
+												<div class="foursquare"></div>
+											</td>
 											<td class="col-2">
 												<p><%= task.content %></p>
 												<form class="edit-task-form">
