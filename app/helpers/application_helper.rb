@@ -1,6 +1,6 @@
 module ApplicationHelper
 	def proper_class(status)
-		if status = 'done'
+		if status == 'done'
 			'checked-task'
 		else
 			''
@@ -8,7 +8,7 @@ module ApplicationHelper
 	end
 
 	def proper_checkbox_attr(status)
-		if status = 'done'
+		if status == 'done'
 			'checked'
 		else
 
