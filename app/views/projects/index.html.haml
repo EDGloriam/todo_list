@@ -1,0 +1,50 @@
+%h1 Simple todo lists
+%h3 From Ruby Garage
+#main-container
+  - @projects.each do |project|
+    %div.project{:projectid => "#{project.id}"}
+      .main-table
+        .table-header
+          %form.edit-project
+            %input.edit-project-name{:type => "text"}
+            %button.js-cancel-btn Cancel
+            %button.js-update-btn Update
+          .ti.ti-calendar.table-name
+            = project.name
+          .right-icon
+            %span.ti.ti-pencil.right-line.js-edit-project
+            %span.ti.ti-trash.js-delete-project
+        / table-header
+        %table.task-table
+          %tbody
+            %tr
+              %th
+                .plus
+              %th{:colspan => "2"}
+                %form
+                  %input.task-name{:type => "text", :name => "add-task", :placeholder => "Start typing here to create a task..."}
+                  %input.button.js-add-task{:type => "submit", :value => "Add Task"}
+          %tbody.tasks
+            - project.tasks.each do |task|
+              %tr{:id => "#{task.id}"}
+                %td.col-1
+                  %input.js-task-status{:type => "checkbox", :checked => proper_checkbox_attr(task.status)}
+                %td.col-2
+                  %p{proper_class(task.status)}
+                    =task.content
+                  %form.edit-task-form
+                    %input.edit-task-content{:type => "text"}
+                      %button.js-cancel-task-btn Cancel
+                      %button.js-update-task-btn Update
+                %td.col-3
+                  .table-icon
+                    %span.ti.ti-split-v
+                    %span.ti.ti-pencil.left-right-line.js-edit-task
+                    %span.ti.ti-trash.js-delete-task
+    / main-table
+%input#new-project-name{:type => "text"}
+%button#create-project Create
+.button-add-list
+  .plus
+  %span Add TODO List
+.copy © Ruby Garage

@@ -1,8 +1,8 @@
 %tr{ id: "#{id}" }
   %td.col-1
-    %input.task-status{type: "checkbox",proper_checkbox_attr("#{status}")}
+    %input.js-task-status{type: "checkbox"}
   %td.col-2
-    %p{class: proper_class("#{status}")}
+    %p
       =content
     %form.edit-task-form
       %input.edit-task-content{type: "text"}

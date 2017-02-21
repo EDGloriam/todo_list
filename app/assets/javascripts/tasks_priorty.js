@@ -1,5 +1,4 @@
 document.documentElement.addEventListener("click", function (event){
-
-		jQuery('.tasks').sortable();
+		if ($('.tasks')) { $('.tasks').sortable(); }
 
 },true);
