@@ -3,7 +3,7 @@
 #-----------------------------------------------------------------------
 $(document).ready ->
   $(".button-add-list").click ->
-    $("#new-project-name, #create-project").show()
+    $(".new-project-container").show()
 
   $("#create-project").click ->
     $.ajax
@@ -15,7 +15,7 @@ $(document).ready ->
       success: (response) ->
         # console.log response
         $("#new-project-name").val('')
-        $("#new-project-name, #create-project").hide()
+        $(".new-project-container").hide()
         $("#main-container").append(JST['templates/project'](response))
       error: (xhr, status, statusErr) ->
         console.log xhr

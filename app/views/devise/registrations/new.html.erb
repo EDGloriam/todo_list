@@ -1,29 +1,27 @@
+<div class="authorization-container">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+  <p class="field">
+    <%= f.email_field :email, autofocus: true, id: "email-field", placeholder: "email" %>
+  </p>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+  <p class="field">
+    <%= f.password_field :password, autocomplete: "off", id: "password-field", placeholder: "password"  %>
+  </p>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+  <p class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "off", id: "password-field",placeholder: "confirm the password "  %>
+  </p>
+<div class="button-container">
+  <p class="actions">
+    <%= f.submit "Sign up", id: "login-button" %>
+  </p>
+</div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>
