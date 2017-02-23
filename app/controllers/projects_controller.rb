@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
 	respond_to :html, :json
 
+
 	def index
 		@projects = current_user.projects
 		respond_with @projects
@@ -17,11 +18,6 @@ class ProjectsController < ApplicationController
 		render json: @project
 	end
 
-	def show
-		@project = current_user.projects.find(params[:id])
-		render json: @project
-	end
-
 	def destroy
 		@project = current_user.projects.find(params[:id])
 		@project.destroy
@@ -30,7 +26,7 @@ class ProjectsController < ApplicationController
 
 	private
 
-	def permitted_params
-		params.require(:project).permit(:name)
-	end
+		def permitted_params
+			params.require(:project).permit(:name)
+		end
 end

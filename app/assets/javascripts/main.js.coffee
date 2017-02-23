@@ -81,6 +81,7 @@ $(document).ready ->
         task:
           content: $(e.target).parent().find(".task-name").val()
           status: ""
+          position: 1
       success: (response) ->
         taskTemplate = JST['templates/task'](response)
         $(e.target).parents(".project").find(".task-table .tasks").append(taskTemplate)
