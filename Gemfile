@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'rails_12factor', group: :production
 gem 'ruby-haml-js'
 gem "sprockets-rails", '= 2.3.3'
 gem 'sprockets', '3.6.3'
