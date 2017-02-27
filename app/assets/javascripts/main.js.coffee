@@ -1,7 +1,15 @@
+$(document).ready ->
+# #-----------------------------------------------------------------------
+# # needs for Sortable
+# #-----------------------------------------------------------------------
+#   $('.tasks').on 'click', 'tr', (event) ->
+#     $(".tasks").sortable
+#       update: (e, ui)->
+#         projectId = $(e.target).parents(".project").attr("projectid")
+#         $.post("/projects/#{projectId}/tasks/sort_tasks", {ids: $(this).sortable('toArray')})
 #-----------------------------------------------------------------------
 # Add Project
 #-----------------------------------------------------------------------
-$(document).ready ->
   $(".button-add-list").click ->
     $(".new-project-container").show()
 
@@ -13,7 +21,6 @@ $(document).ready ->
         project:
           name: $("#new-project-name").val()
       success: (response) ->
-        # console.log response
         $("#new-project-name").val('')
         $(".new-project-container").hide()
         $("#main-container").append(JST['templates/project'](response))
@@ -137,7 +144,6 @@ $(document).ready ->
 # Marck Task as 'Done'
 #-----------------------------------------------------------------------
   $(document).on "change", ".js-task-status", (e) ->
-    # e.preventDefault()
     projectid = $(e.target).parents(".project").attr("projectid")
     id = $(e.target).parents("tr").attr("id")
     if e.currentTarget.checked

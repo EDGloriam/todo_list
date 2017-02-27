@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery-ui/widgets/sortable
+//= require jquery-ui
 //= require jquery_ujs
 //= require_tree ./templates
 //= require_tree .
