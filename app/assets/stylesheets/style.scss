@@ -5,12 +5,14 @@
 	text-align: center;
 	background-image: url(bg.jpg);
 	background-size: 100%;
+	/*background-repeat: no-repeat;*/
+	background-attachment: fixed;
 }
 a{
 	text-decoration: none;
 
 	&:hover{
-		text-shadow: 0 1px 1px #000;
+		text-shadow: 0 0 2px #000;
 	}
 }
 h1 {
@@ -23,17 +25,17 @@ h3 {
 	text-transform: uppercase;
 	margin-top: -23px;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: -1px;
 }
 /*--------------------------------authorization form------------------------------------*/
 .authorization-container{
-	background: rgba(0,0,0, 0.6);
-	padding: 15px 0;
+	background: rgba(255,255,255, 0.6);
+	padding: 10px 0;
 	margin: 100px auto;
 	width: 350px;
 	border-bottom-right-radius: 30px;
 	border-bottom-left-radius: 30px;
-	border: 1px solid #000;
+	box-shadow: 3px 5px 34px 0px;
 }
 #email-field,
 #password-field,
@@ -45,25 +47,26 @@ h3 {
 .button-container{
 	position: relative;
 	margin-bottom:30px;
+	margin-top:-10px;
 }
 #checkbox{
 	font-size: 0.9em;
 	position: absolute;
-	top:0;
-	left: 37px;
+	top: 12px;
+  left: 27px
 }
 #checkbox input{
-width: 11px;
-height: 11px;
+	width: 15px;
+	height: 15px;
 }
 
 #login-button{
-	padding: 5px 15px;
-	height: 30px;
-	font-size: 1.1em;
-	position: absolute;
-	right: 37px;
-	top:0;
+	padding: 5px 26px;
+  height: 30px;
+  font-size: 1.1em;
+  position: absolute;
+  right: 37px;
+  top: 11px;
 	background: rgb(82,129,190); /* Old browsers */
 	background: -moz-linear-gradient(top, rgba(82,129,190,1) 25%, rgba(56,91,152,1) 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(top, rgba(82,129,190,1) 25%,rgba(56,91,152,1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -81,10 +84,16 @@ input[type=submit]:focus,
 #link-signup,
 #link-forgot,
 #checkbox{
-	color: #4B77B4;
+	color: #192f4e;
+}
+.hr{
+		position: relative;
+    top: 57px;
+    width: 90%;
 }
 .authorization-form-links{
 	padding: 25px 37px;
+	padding-top: 40px;
 	&:after{
 		content: "";
 		clear: both;
@@ -459,7 +468,7 @@ input[type=submit]:focus,
 	height: 28px;
 	border: 1px solid #4C7F60;
     color: white;
-    border-radius: 0 4px 4px 0;
+    border-radius: 4px;
     text-shadow: 1px 1px 2px black;
 	background: rgb(146,201,172); /* Old browsers */
 		background: -moz-linear-gradient(top, rgba(146,201,172,1) 1%, rgba(80,135,103,1) 85%); /* FF3.6-15 */
@@ -469,10 +478,13 @@ input[type=submit]:focus,
 
 }
 .edit-project button.js-cancel-btn,
-.edit-task-form button.js-update-task-btn{
-	background: rgb(186,116,111); /* Old browsers */
-		background: -moz-linear-gradient(top, rgba(186,116,111,1) 0%, rgba(188,43,30,1) 31%, rgba(188,43,30,1) 100%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(top, rgba(186,116,111,1) 0%,rgba(188,43,30,1) 31%,rgba(188,43,30,1) 100%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(to bottom, rgba(186,116,111,1) 0%,rgba(188,43,30,1) 31%,rgba(188,43,30,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba746f', endColorstr='#bc2b1e',GradientType=0 ); /* IE6-9 */
+.edit-task-form button.js-cancel-task-btn{
+	margin-right: 5px;
+	border: 1px solid #4A7AB5;
+background: rgb(164,203,252); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(164,203,252,1) 0%, rgba(145,164,188,1) 50%, rgba(164,203,252,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(164,203,252,1) 0%,rgba(145,164,188,1) 50%,rgba(164,203,252,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(164,203,252,1) 0%,rgba(145,164,188,1) 50%,rgba(164,203,252,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4cbfc', endColorstr='#a4cbfc',GradientType=0 ); /* IE6-9 */
+
 }
